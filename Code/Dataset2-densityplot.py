@@ -13,7 +13,7 @@ from datetime import date
 crime = pd.read_csv('Dataset2-Crime_type_in_MD_with_lat_lng.csv')
 #Remove columns with useless information in Crime data.
 crime_clean = crime.iloc[:,[3,5,6,20,21]]
-# 补齐crime time,通过三个time column相互补充
+
 for i in range(len(crime_clean)):
     if (crime_clean.iloc[i,3] == 'nan') & (crime_clean.iloc[i,4] != 'nan'):
         crime_clean.iloc[i,3] = crime_clean[i,4]
